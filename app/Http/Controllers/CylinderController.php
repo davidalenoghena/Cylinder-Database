@@ -16,8 +16,10 @@ class CylinderController extends Controller
      */
     public function index()
     {
-        $cylinder = DB::table('cylinders')->orderBy('created_at', 'desc')->get();
-        return view('admin.cylinder.cylinder', ['cylinder' => $cylinder]);
+        $cylinders = DB::table('cylinders')
+                            ->orderBy('created_at', 'desc')
+                            ->paginate(10);
+        return view('admin.cylinder.cylinder', ['cylinders' => $cylinders]);
     }
 
     /**

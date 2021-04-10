@@ -49,7 +49,7 @@
                         @php
                          $count = 1;
                         @endphp
-                        @foreach($cylinder as $cylinder)
+                        @foreach($cylinders as $cylinder)
                         <tr>
                           <td>
                             <h5> {{ $count++ }} </h5>
@@ -92,10 +92,14 @@
                          @endforeach
                       </tbody>
                     </table>
-                    
                   </div>
                   
                 </div>
+                <section  class="container">
+                      <nav aria-label="Page navigation example" class="pagination-body">
+                        {{ $cylinders->links() }}
+                      </nav>
+                  </section>
               </div>
             </div>
 </div>

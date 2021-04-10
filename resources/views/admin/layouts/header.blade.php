@@ -29,7 +29,7 @@
   <!-- partial:partials/_sidebar.html --><nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href=" ">
+            <a class="nav-link" href="{{ route('admin.home') }}">
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -43,8 +43,8 @@
             </a>
             <div class="collapse" id="auth2">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href=" ">QR Code</a></li>
-                <li class="nav-item"> <a class="nav-link" href=" ">Barcode</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">QR Code</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Barcode</a></li>
               </ul>
             </div>
           </li>

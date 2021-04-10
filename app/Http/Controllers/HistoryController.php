@@ -15,8 +15,10 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $history = DB::table('histories')->orderBy('created_at', 'desc')->get();
-        return view('admin.history.history', ['history' => $history]);
+        $histories = DB::table('histories')
+                            ->orderBy('created_at', 'desc')
+                            ->paginate(10);
+        return view('admin.history.history', ['histories' => $histories]);
     }
 
     /**
@@ -60,12 +62,12 @@ class HistoryController extends Controller
     {
         //$his_data = History::find($history);
         //$serial = $his_data->serial_number;
-        $history_data = DB::table('histories')
+        $history_datas = DB::table('histories')
                             ->select(DB::raw("*"))
                             ->where('serial_number', $serial)
                             ->paginate(10);
         return view('admin.history.history_show', [
-            'history_data' => $history_data,
+            'history_datas' => $history_datas,
             'serial' => $serial,
         ]);
     }

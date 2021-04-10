@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.home');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/home', 'HomeController@index')->name('admin.home');
+Route::get('/', 'HomeController@index')->name('admin.home');
 Route::get('/admin/cylinder/show/{id}', 'CylinderController@show')->name('show.cylinder');
 Route::get('/admin/history/show/{id}', 'HistoryController@show')->name('show.history');
 Route::get('/admin/cylinder', 'CylinderController@index')->name('admin.cylinder');

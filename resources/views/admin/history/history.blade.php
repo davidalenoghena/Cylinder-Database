@@ -50,7 +50,7 @@
                         @php
                          $count = 1;
                         @endphp
-                        @foreach($history as $row)
+                        @foreach($histories as $row)
                         <tr>
                           <td>
                             <h5> {{ $count++ }} </h5>
@@ -77,7 +77,11 @@
                     </table>
                     
                   </div>
-                  
+                  <section class="container">
+                        <nav aria-label="Page navigation example" class="pagination-body">
+                            {{ $histories->links() }}
+                        </nav>
+                    </section>
                 </div>
               </div>
             </div>
