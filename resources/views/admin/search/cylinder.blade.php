@@ -22,17 +22,7 @@
                       {{ Session::get('success') }}
                   </div>
                   @endif
-                  <div class="search">
-                      <form action="{{ route('search.cylinder') }}" method="GET">
-                          @csrf
-                          <div class="search-wrap">
-                              <input type="text" name="search" id="search" class="searchBox" placeholder="Search...">
-                              <button type="submit" class="searchButton">
-                                  <i class="fa fa-search"></i>
-                              </button>
-                          </div>
-                      </form>
-                  </div>
+                  Search Results for "{{ $your_search }}"
                   <div class="table-responsive">
                     
                     <table class="table table-striped">

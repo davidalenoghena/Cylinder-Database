@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class HistoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,6 +24,20 @@ class HistoryController extends Controller
                             ->orderBy('created_at', 'desc')
                             ->paginate(10);
         return view('admin.history.history', ['histories' => $histories]);
+    }
+
+    public function search(Request $request)
+    {
+        $your_search = $request->search;
+        $histories = DB::table('histories')
+                            ->select(DB::raw("*"))
+                            ->where('serial_number', 'like', '%'.$request->search.'%')
+                            ->paginate(10);
+        return view('admin.search.history', 
+                    [
+                        'histories' => $histories,
+                        'your_search' => $your_search,
+                    ]);
     }
 
     /**

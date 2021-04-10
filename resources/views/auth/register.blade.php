@@ -1,13 +1,36 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Register</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{ asset('admin_assets/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin_assets/vendors/base/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{ asset('admin_assets/css/style.css')}}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{ asset('admin_assets/images/favicon.png')}}" />
+</head>
 
-                <div class="card-body">
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div  style="text-align: center;">
+                <img src="{{ asset('img/logo.png')}}" alt="logo" style="height: 40px;">
+              </div>
+              <br>
+              <h4 align="center">REGISTER</h4>
+              <br>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -69,9 +92,24 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                    </div>
+          </div>
         </div>
+      </div>
+      <!-- content-wrapper ends -->
     </div>
-</div>
-@endsection
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{ asset('admin_assets/vendors/base/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="{{ asset('admin_assets/js/off-canvas.js')}}"></script>
+  <script src="{{ asset('admin_assets/js/hoverable-collapse.js')}}"></script>
+  <script src="{{ asset('admin_assets/js/template.js')}}"></script>
+  <script src="{{ asset('admin_assets/js/todolist.js')}}"></script>
+  <!-- endinject -->
+</body>
+
+</html>

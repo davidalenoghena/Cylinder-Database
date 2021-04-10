@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class CylinderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +24,24 @@ class CylinderController extends Controller
         $cylinders = DB::table('cylinders')
                             ->orderBy('created_at', 'desc')
                             ->paginate(10);
-        return view('admin.cylinder.cylinder', ['cylinders' => $cylinders]);
+        return view('admin.cylinder.cylinder', 
+                    [
+                        'cylinders' => $cylinders,
+                    ]);
+    }
+
+    public function search(Request $request)
+    {
+        $your_search = $request->search;
+        $cylinders = DB::table('cylinders')
+                            ->select(DB::raw("*"))
+                            ->where('serial_number', 'like', '%'.$request->search.'%')
+                            ->paginate(10);
+        return view('admin.search.cylinder',
+                    [
+                        'cylinders' => $cylinders,
+                        'your_search' => $your_search,
+                    ]);
     }
 
     /**

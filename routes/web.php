@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin/home', 'HomeController@index')->name('admin.home');
-Route::get('/', 'HomeController@index')->name('admin.home');
+Route::get('/home', 'HomeController@index')->name('admin.home');
 Route::get('/admin/cylinder/show/{id}', 'CylinderController@show')->name('show.cylinder');
 Route::get('/admin/history/show/{id}', 'HistoryController@show')->name('show.history');
 Route::get('/admin/cylinder', 'CylinderController@index')->name('admin.cylinder');
@@ -30,3 +30,8 @@ Route::post('admin/cylinder/store', 'CylinderController@store')->name('store.cyl
 Route::get('admin/cylinder/edit/{id}', 'CylinderController@edit')->name('edit.cylinder');
 Route::post('admin/cylinder/update/{id}', 'CylinderController@update')->name('update.cylinder');
 Route::get('/admin/cylinder/delete/{id}', 'CylinderController@destroy')->name('delete.cylinder');
+
+Route::get('/admin/cylinder/search', 'CylinderController@search')->name('search.cylinder');
+Route::get('/admin/history/search', 'HistoryController@search')->name('search.history');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
