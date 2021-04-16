@@ -29,8 +29,8 @@
           <input type="text" class="form-control" name="serial_number" id="exampleInputName1" placeholder="Serial Number of Cylinder" required>
         </div>
         <div class="form-group">
-          <label for="exampleInputName1">Weight</label>
-          <input type="text" class="form-control" name="weight" id="exampleInputName1" placeholder="Weight of Cylinder in kg" required>
+          <label for="exampleInputName1">Tare Weight</label>
+          <input type="text" class="form-control" name="weight" id="exampleInputName1" placeholder="Tare Weight of Cylinder in kg" required>
         </div>
         <div class="form-group">
           <label for="exampleInputName1">Date of Manufacture</label>

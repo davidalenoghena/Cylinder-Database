@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div class="card">
                             <div class="card-body">
-                              <strong><h4>Weight: {{ $cylinder_data->weight }}</h4> </strong>
+                              <strong><h4>Tare Weight: {{ $cylinder_data->weight }}</h4> </strong>
                             </div>
                     </div>
                     <div class="card">
