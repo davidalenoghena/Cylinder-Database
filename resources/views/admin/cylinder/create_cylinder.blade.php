@@ -45,8 +45,12 @@
           <input type="text" class="form-control" name="country_of_origin" id="exampleInputName1" placeholder="Country of Origin" required>
         </div>
         <div class="form-group">
-          <label for="exampleInputName1">Cylinder Source</label>
-          <input type="text" class="form-control" name="source" id="exampleInputName1" placeholder="Source of Cylinder" required>
+        <label for="exampleInputName1">Source</label>
+          <select name="source" id="source" class="form-control-sm form-control" required>
+              <option value="" disabled selected hidden>Please select</option>
+              <option value="Hub">Hub</option>
+              <option value="Customer">Customer</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="exampleInputName1">Address of Source</label>
